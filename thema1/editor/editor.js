@@ -2,7 +2,7 @@
 const token = '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'; // Nur zu Testzwecken
 const owner = 'christoph-blank';
 const repo = 'blog';
-const path = '../../thema1/thema1-content.html'; // Pfad im Repo
+const path = 'https://christoph-blank.github.io/blog/thema1/thema1-content.html'; // Pfad im Repo
 
 const editor = document.getElementById('editor');
 const saveBtn = document.getElementById('saveBtn');
@@ -50,3 +50,4 @@ saveBtn.addEventListener('click', async () => {
   }
 
 });
+
