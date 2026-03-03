@@ -2,7 +2,7 @@
 const token = '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'; // Nur zu Testzwecken
 const owner = 'christoph-blank';
 const repo = 'blog';
-const path = 'thema1-content.html'; // Pfad im Repo
+const path = 'thema1/thema1-content.html'; // Pfad im Repo
 
 const editor = document.getElementById('editor');
 const saveBtn = document.getElementById('saveBtn');
@@ -48,4 +48,5 @@ saveBtn.addEventListener('click', async () => {
     console.error(err);
     alert('Fehler beim Speichern');
   }
+
 });
