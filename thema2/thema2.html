@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smartphone-Games</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Navigation</h2>
+    <a href="../index.html">Startseite</a>
+    <a href="../thema1/thema1.html">Pokemon Karten</a>
+    <a href="../thema2.html">Smartphone-Games</a>
+  </div>
+
+  <div class="main-content">
+    <!-- EINZIGES FRAME für Ticker + Artikel -->
+    <iframe class="content-frame" src="thema2-content.html" scrolling="no"></iframe>
+
+    <!-- SEPARATES FRAME für Kommentare -->
+    <iframe class="comment-frame" src="thema2-comments.html" scrolling="no"></iframe>
+  </div>
+
+  <script>
+    // Automatisches Resizing beider iframes
+    function resizeIframe(iframe) {
+      try {
+        const height = iframe.contentWindow.document.body.scrollHeight;
+        iframe.style.height = height + 'px';
+      } catch(e) {}
+    }
+
+    const contentIframe = document.querySelector('.content-frame');
+    const commentIframe = document.querySelector('.comment-frame');
+
+    contentIframe.onload = () => {
+      resizeIframe(contentIframe);
+      setTimeout(() => resizeIframe(contentIframe), 500);
+      setTimeout(() => resizeIframe(contentIframe), 1500);
+      setTimeout(() => resizeIframe(contentIframe), 3000);
+    }
+
+    commentIframe.onload = () => {
+      resizeIframe(commentIframe);
+      setTimeout(() => resizeIframe(commentIframe), 500);
+      setTimeout(() => resizeIframe(commentIframe), 1500);
+      setTimeout(() => resizeIframe(commentIframe), 3000);
+    }
+  </script>
+
+</body>
+</html>
+
