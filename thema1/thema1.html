@@ -15,17 +15,24 @@
     <a href="../thema2/thema2.html">Thema 2</a>
   </div>
 
-  <div class="main-content">
-    <!-- Thema-Inhalt per iframe -->
-    <iframe src="thema1-content.html" style="width:100%;border:none;" height="600"></iframe>
+  <div id="article"></div>
+<div id="comments"></div>
 
-    <!-- Kommentare per iframe -->
-    <iframe src="thema1-comments.html" style="width:100%;border:none;" height="400"></iframe>
-  </div>
+<script>
+async function loadHTML(id, file) {
+  const res = await fetch(file);
+  const text = await res.text();
+  document.getElementById(id).innerHTML = text;
+}
+
+loadHTML('article', 'thema1-content.html');
+loadHTML('comments', 'thema1-comments.html');
+</script>
 
 </body>
 
 </html>
+
 
 
 
