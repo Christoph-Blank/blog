@@ -1,8 +1,6 @@
 <section class="pokemon-header">
   <div class="slideshow">
-    <img src="https://images.pokemontcg.io/base1/4.png" class="slide active">
-    <img src="https://images.pokemontcg.io/base1/2.png" class="slide">
-    <img src="https://images.pokemontcg.io/base1/15.png" class="slide">
+    <img id="slideImage" src="https://images.pokemontcg.io/base1/4.png">
   </div>
 </section>
 
@@ -34,18 +32,25 @@
     Spieler bauen Decks mit Energiekarten, Trainerkarten und Pokémon,
     um taktisch gegen Gegner anzutreten.
   </p>
+  
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const slides = document.querySelectorAll(".slide");
-    let index = 0;
+window.addEventListener("load", function() {
 
-    if (slides.length === 0) return;
+  const images = [
+    "https://images.pokemontcg.io/base1/4.png",
+    "https://images.pokemontcg.io/base1/2.png",
+    "https://images.pokemontcg.io/base1/15.png"
+  ];
 
-    setInterval(() => {
-        slides[index].classList.remove("active");
-        index = (index + 1) % slides.length;
-        slides[index].classList.add("active");
-    }, 3000);
+  let index = 0;
+  const slideImage = document.getElementById("slideImage");
+
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    slideImage.src = images[index];
+  }, 3000);
+
 });
 </script>
+
 
