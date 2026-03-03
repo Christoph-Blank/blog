@@ -1,5 +1,48 @@
-<section>
-  <h1>Thema 1</h1>
-  <p>Hier steht der Inhalt von Thema 1.</p>
-  <p>Du kannst Texte, Bilder oder Videos einfügen.</p>
+<section class="pokemon-header">
+  <div class="slideshow">
+    <img src="https://images.pokemontcg.io/base1/4.png" class="slide active">
+    <img src="https://images.pokemontcg.io/base1/2.png" class="slide">
+    <img src="https://images.pokemontcg.io/base1/15.png" class="slide">
+  </div>
 </section>
+
+<section class="pokemon-content">
+  <h1>Pokémon Karten – Sammeln, Tauschen, Spielen</h1>
+
+  <p>
+    Pokémon-Karten sind seit Ende der 1990er Jahre eines der beliebtesten
+    Sammelkartenspiele weltweit. Sie verbinden Strategie, Sammelleidenschaft
+    und Nostalgie miteinander.
+  </p>
+
+  <h2>Was macht Pokémon-Karten besonders?</h2>
+  <p>
+    Jede Karte zeigt ein Pokémon mit individuellen Werten, Fähigkeiten und
+    Angriffen. Seltene Holo- oder Secret-Rare-Karten sind besonders begehrt.
+  </p>
+
+  <h2>Seltenheit & Wert</h2>
+  <p>
+    Der Wert einer Karte hängt vom Zustand, der Seltenheit und der Nachfrage ab.
+    Karten der ersten Edition oder limitierte Promokarten können mehrere
+    hundert oder sogar tausende Euro wert sein.
+  </p>
+
+  <h2>Strategisches Spiel</h2>
+  <p>
+    Neben dem Sammeln ist das strategische Spielen ein zentraler Bestandteil.
+    Spieler bauen Decks mit Energiekarten, Trainerkarten und Pokémon,
+    um taktisch gegen Gegner anzutreten.
+  </p>
+</section>
+
+<script>
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+setInterval(() => {
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+}, 3000);
+</script>
