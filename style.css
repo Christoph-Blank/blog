@@ -133,6 +133,16 @@ p {
   animation-play-state: paused;
 }
 
+.pokemon-content {
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  padding: 10px 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
 
