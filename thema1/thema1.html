@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pokémon Karten</title>
+  <title>Thema 1</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -11,39 +11,44 @@
   <div class="sidebar">
     <h2>Navigation</h2>
     <a href="../index.html">Startseite</a>
-    <a href="thema1.html">Pokémon Karten</a>
+    <a href="thema1.html">Thema 1</a>
     <a href="../thema2/thema2.html">Thema 2</a>
   </div>
 
   <div class="main-content">
+    <!-- EINZIGES FRAME für Ticker + Artikel -->
+    <iframe class="content-frame" src="thema1-content.html" scrolling="no"></iframe>
 
-    <div class="article-wrapper">
-      <iframe src="thema1-content.html" class="content-frame"></iframe>
-      <iframe src="thema1-comments.html" class="comment-frame"></iframe>
-    </div>
-
+    <!-- SEPARATES FRAME für Kommentare -->
+    <iframe class="comment-frame" src="thema1-comments.html" scrolling="no"></iframe>
   </div>
 
   <script>
-function resizeIframe(iframe) {
-    try {
+    // Automatisches Resizing beider iframes
+    function resizeIframe(iframe) {
+      try {
         const height = iframe.contentWindow.document.body.scrollHeight;
-        iframe.style.height = height + "px";
-    } catch (e) {}
-}
+        iframe.style.height = height + 'px';
+      } catch(e) {}
+    }
 
-document.querySelectorAll("iframe").forEach(iframe => {
-    iframe.onload = function() {
-        resizeIframe(iframe);
+    const contentIframe = document.querySelector('.content-frame');
+    const commentIframe = document.querySelector('.comment-frame');
 
-        // Mehrfach nachjustieren (wichtig für Utterances!)
-        setTimeout(() => resizeIframe(iframe), 500);
-        setTimeout(() => resizeIframe(iframe), 1500);
-        setTimeout(() => resizeIframe(iframe), 3000);
-    };
-});
-</script>
+    contentIframe.onload = () => {
+      resizeIframe(contentIframe);
+      setTimeout(() => resizeIframe(contentIframe), 500);
+      setTimeout(() => resizeIframe(contentIframe), 1500);
+      setTimeout(() => resizeIframe(contentIframe), 3000);
+    }
+
+    commentIframe.onload = () => {
+      resizeIframe(commentIframe);
+      setTimeout(() => resizeIframe(commentIframe), 500);
+      setTimeout(() => resizeIframe(commentIframe), 1500);
+      setTimeout(() => resizeIframe(commentIframe), 3000);
+    }
+  </script>
 
 </body>
 </html>
-
