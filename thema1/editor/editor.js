@@ -1,5 +1,5 @@
 // GitHub-Konfiguration
-const token = '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'; // Nur zu Testzwecken
+const token = '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'; // Nur zu Testzwecken
 const owner = 'christoph-blank';
 const repo = 'blog';
 const path = 'https://christoph-blank.github.io/blog/thema1/thema1-content.html'; // Pfad im Repo
@@ -50,4 +50,5 @@ saveBtn.addEventListener('click', async () => {
   }
 
 });
+
 
