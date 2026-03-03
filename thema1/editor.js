@@ -8,7 +8,7 @@ const editor = document.getElementById('editor');
 const saveBtn = document.getElementById('saveBtn');
 
 // 1️⃣ Thema1 Content laden
-fetch(`https://api.github.com/repos/${owner}/${repo}/${path}`, {
+fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
   headers: {
     'Authorization': `token ${token}`,
     'Accept': 'application/vnd.github.v3.raw'
@@ -50,5 +50,6 @@ saveBtn.addEventListener('click', async () => {
   }
 
 });
+
 
 
