@@ -13,6 +13,12 @@ body {
   display: block; /* statt flex */
 }
 
+.homepage-intro {
+  margin-left: 240px;       /* Platz für Sidebar */
+  padding: 50px 40px;
+  flex: 1;                  /* nimmt den restlichen Platz ein */
+}
+
 /* ===== SIDEBAR ===== */
 .sidebar {
   width: 240px;
@@ -160,16 +166,6 @@ p {
   .article-wrapper {
     max-width: 100%;
   }
-}
-
-.homepage-intro {
-  width: 100%;
-  overflow: hidden;
-  background: white;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  padding: 10px 0;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
 
