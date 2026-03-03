@@ -110,7 +110,8 @@ p {
 
 .card-track {
   display: flex;
-  width: fit-content;
+  flex-wrap: nowrap;        /* Keine Zeilenumbruch */
+  width: max-content;       /* Track so breit wie alle Bilder zusammen */
   animation: scrollCards 20s linear infinite;
 }
 
@@ -121,8 +122,12 @@ p {
 }
 
 @keyframes scrollCards {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Hälfte der Track verschieben */
+  }
 }
 
 .card-ticker:hover .card-track {
