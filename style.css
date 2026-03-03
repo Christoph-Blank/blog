@@ -166,6 +166,11 @@ p {
   .article-wrapper {
     max-width: 100%;
   }
+
+  .homepage-intro {
+    margin-left: 0;
+    padding: 30px 20px;
+  }
 }
 
 
