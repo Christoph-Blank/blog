@@ -73,27 +73,60 @@ body {
   transition: 0.3s;
 }
 
-/* Optional leichter Hover-Effekt */
 .content-frame:hover,
 .comment-frame:hover {
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
-/* ===== TYPOGRAFIE (falls Content-Datei keinen eigenen Style hat) ===== */
+/* ===== TYPOGRAFIE ===== */
 h1 {
   font-size: 28px;
   margin-bottom: 20px;
+  color: #cc0000; /* Pokémon Theme Rot */
 }
 
 h2 {
   font-size: 22px;
   margin-top: 25px;
   margin-bottom: 10px;
+  color: #2a75bb; /* Pokémon Theme Blau */
 }
 
 p {
   line-height: 1.7;
   margin-bottom: 15px;
+}
+
+/* ===== POKÉMON KARTEN LAUFBAND ===== */
+.card-ticker {
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  padding: 10px 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.card-track {
+  display: flex;
+  width: fit-content;
+  animation: scrollCards 20s linear infinite;
+}
+
+.card-track img {
+  height: 180px;
+  margin: 0 15px;
+  object-fit: contain;
+}
+
+@keyframes scrollCards {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.card-ticker:hover .card-track {
+  animation-play-state: paused;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -112,98 +145,5 @@ p {
 
   .article-wrapper {
     max-width: 100%;
-  }
-}
-
-/* ===== POKÉMON THEME ERWEITERUNG ===== */
-
-/* Titel im Pokémon-Stil */
-h1 {
-  color: #cc0000;
-  font-weight: bold;
-}
-
-/* Subtitel */
-h2 {
-  color: #2a75bb;
-}
-
-/* Slideshow */
-.slideshow {
-  width: 100%;
-  height: 250px;
-  margin-bottom: 30px;
-  background: white;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.slideshow img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-}
-
-.slide {
-  position: absolute;
-  width: 100%;
-  height: 250px;
-  object-fit: contain;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.slide.active {
-  opacity: 1;
-}
-
-/* Leichter Pokémon-Akzent für Sidebar */
-.sidebar {
-  background: linear-gradient(180deg, #1e1e1e, #2b2b2b);
-  border-right: 4px solid #ffcc00;
-}
-
-.sidebar a:hover {
-  color: #ffcc00;
-}
-
-/* ===== Pokémon Karten Laufband ===== */
-
-.card-ticker {
-  width: 100%;
-  overflow: hidden;
-  background: white;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-}
-
-.card-track {
-  display: flex;
-  width: max-content;
-  animation: scrollCards 25s linear infinite;
-}
-
-.card-track img {
-  height: 180px;
-  margin: 15px;
-  border-radius: 8px;
-  transition: transform 0.3s;
-}
-
-.card-track img:hover {
-  transform: scale(1.1);
-}
-
-/* Animation */
-@keyframes scrollCards {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
   }
 }
