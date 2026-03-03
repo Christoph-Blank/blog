@@ -25,17 +25,25 @@
   </div>
 
   <script>
-  // automatische Höhe für beide iframes
-  function resizeIframe(iframe) {
-      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
-  }
+function resizeIframe(iframe) {
+    try {
+        const height = iframe.contentWindow.document.body.scrollHeight;
+        iframe.style.height = height + "px";
+    } catch (e) {}
+}
 
-  document.querySelectorAll("iframe").forEach(iframe => {
-      iframe.onload = function() {
-          resizeIframe(iframe);
-      };
-  });
-  </script>
+document.querySelectorAll("iframe").forEach(iframe => {
+    iframe.onload = function() {
+        resizeIframe(iframe);
+
+        // Mehrfach nachjustieren (wichtig für Utterances!)
+        setTimeout(() => resizeIframe(iframe), 500);
+        setTimeout(() => resizeIframe(iframe), 1500);
+        setTimeout(() => resizeIframe(iframe), 3000);
+    };
+});
+</script>
 
 </body>
 </html>
+
