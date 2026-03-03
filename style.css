@@ -169,3 +169,41 @@ h2 {
 .sidebar a:hover {
   color: #ffcc00;
 }
+
+/* ===== Pokémon Karten Laufband ===== */
+
+.card-ticker {
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.card-track {
+  display: flex;
+  width: max-content;
+  animation: scrollCards 25s linear infinite;
+}
+
+.card-track img {
+  height: 180px;
+  margin: 15px;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.card-track img:hover {
+  transform: scale(1.1);
+}
+
+/* Animation */
+@keyframes scrollCards {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
