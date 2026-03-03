@@ -1,6 +1,6 @@
 // GitHub-Konfiguration
 const token = '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'; // Nur zu Testzwecken
-const owner = 'christoph-blank';
+const owner = 'Christoph-Blank';
 const repo = 'blog';
 const path = 'thema1/thema1-content.html'; // Pfad im Repo
 
@@ -50,4 +50,5 @@ saveBtn.addEventListener('click', async () => {
   }
 
 });
+
 
