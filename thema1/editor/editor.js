@@ -8,10 +8,15 @@ const editor = document.getElementById('editor');
 const saveBtn = document.getElementById('saveBtn');
 
 // 1️⃣ Thema1 Content laden
-fetch(`https://raw.githubusercontent.com/${owner}/${repo}/main/${path}`)
+fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+  headers: {
+    'Authorization': `token ${token}`,
+    'Accept': 'application/vnd.github.v3.raw'
+  }
+})
   .then(res => res.text())
   .then(data => editor.value = data)
-  .catch(err => console.error('Fehler beim Laden:', err));
+  .catch(err => console.error(err));
 
 // 2️⃣ Änderungen speichern
 saveBtn.addEventListener('click', async () => {
@@ -43,4 +48,5 @@ saveBtn.addEventListener('click', async () => {
     console.error(err);
     alert('Fehler beim Speichern');
   }
+
 });
